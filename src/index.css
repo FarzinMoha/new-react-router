@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  /* 🌞 Light Theme (Bright & Soft) */
+  --color-primary: oklch(0.80 0.20 250); /* Sky Blue */
+  --color-secondary: oklch(0.85 0.25 345); /* Soft Rose Pink */
+  --color-tertiary: oklch(0.78 0.18 280); /* Light Lavender */
+  --color-accent: oklch(0.75 0.35 95); /* Golden Yellow */
+  --color-error: oklch(0.60 0.28 25); /* Golden red */
+  --shadow-default: 0px 4px 8px oklch(0 0 0 / .5);
+  --bg-color: oklch(0.98 0 0); /* Almost White */
+  --text-color: oklch(0.15 0.02 250); /* Deep Grayish Navy */
+  
+  --border-color: oklch(0.80 0.05 250); /* Cool Gray */
+  --card-bg: oklch(0.95 0.03 270); /* Misty Lilac */
+}
+
+.dark {
+  /* 🌙 Dark Theme (Deep, Rich & Vibrant) */
+  --color-primary: oklch(0.50 0.30 240); /* Deep Electric Blue */
+  --color-secondary: oklch(0.55 0.35 350); /* Vivid Magenta */
+  --color-tertiary: oklch(0.50 0.25 280); /* Rich Royal Purple */
+  --color-accent: oklch(0.90 0.22 95); /* Lemon Yellow */
+  --color-error: oklch(0.60 0.28 25); /* Golden red */
+  --bg-color: oklch(0.08 0.03 250); /* Near-Black Navy */
+  --text-color: oklch(0.95 0.02 250); /* Off-White */
+  --shadow-default: 0px 4px 8px oklch(1 0 0 / .5);
+  --border-color: oklch(0.30 0.10 250); /* Subtle Dark Blue */
+  --card-bg: oklch(0.12 0.03 260); /* Deep Charcoal Blue */
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-err: var(--color-error);
+  --color-accent: var(--color-accent);
+}
+
+* {
+  transition: all 0.150s ease-in-out;
+}
+
+
+body {
+  background-color: var(--bg-color);
+  transition: background-color 0.5s ease-in-out;
+}
