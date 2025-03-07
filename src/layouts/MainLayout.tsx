@@ -1,29 +1,23 @@
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useLoaderData, useNavigate } from "react-router-dom"
 import Header from "../components/header/Header"
-import { useEffect, useState } from "react";
-
+import Loading from "../components/Loading"
 
 export default function MainLayout() {
-  console.log('MainLayout');
-  const [isAuth,seIsAuth] = useState<string | null>(null)
+  const data = useLoaderData()
   const navigate = useNavigate()
-  
-  useEffect(()=>{
-      const token = localStorage.getItem('auth')
-      if(token){
-          seIsAuth(token)
-      }else{
-          navigate('/sign-in')
-      }
-  },[])
-  
+  if(!data) navigate('/sign-in')
+
   return (
-    <div className=" w-full">
-      {isAuth && 
+    <div className=" w-full text-txt">
+      {data ? 
         <>
           <Header/>
           <Outlet/>
         </>
+        :
+        <div className=" w-full h-screen flex justify-center items-center ">
+          <Loading size={30} className=" text-primary" />
+        </div>
       }
     </div>
   )

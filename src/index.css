@@ -35,6 +35,7 @@
   --color-tertiary: var(--color-tertiary);
   --color-err: var(--color-error);
   --color-accent: var(--color-accent);
+  --color-txt:var(--text-color)
 }
 
 * {

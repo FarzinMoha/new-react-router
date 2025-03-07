@@ -5,10 +5,12 @@ import ProfilePage from "./pages/ProfilePage";
 import AuthLayout from "./layouts/AuthLayout";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
+import { getUser, signUpAction } from "./fetch/auth";
 
 const Router = createBrowserRouter([
   {
     element: <MainLayout />,
+    loader:getUser,
     children:[
       {
         path:'/',
@@ -30,7 +32,8 @@ const Router = createBrowserRouter([
       },
       {
         path:'/sign-up',
-        element:<SignUp/>
+        element:<SignUp/>,
+        action:signUpAction
       },
       
     ],
